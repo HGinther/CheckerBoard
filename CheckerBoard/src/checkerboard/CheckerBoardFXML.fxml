@@ -6,23 +6,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="checkerboard.CheckerBoardFXMLController">
+<VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="checkerboard.CheckerBoardFXMLController">
    <children>
-      <MenuBar>
+      <MenuBar fx:id="menuBar">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Grid">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="grid16" mnemonicParsing="false" onAction="#handleGridSize" text="16 x 16" />
+                  <MenuItem fx:id="grid10" mnemonicParsing="false" onAction="#handleGridSize" text="10 x 10" />
+                  <MenuItem fx:id="grid8" mnemonicParsing="false" onAction="#handleGridSize" text="8 x 8" />
+                  <MenuItem fx:id="grid3" mnemonicParsing="false" onAction="#handleGridSize" text="3 x 3" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Colors">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#handleColorDefault" text="Default" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleColorBlue" text="Blue" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane fx:id="anchorPane" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>
